@@ -1,0 +1,90 @@
+/* 全局样式 */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f5f5dc;
+    line-height: 1.6; /* 提高文本可读性 */
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center; /* 文本居中对齐 */
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.2em;
+    color: #333;
+}
+
+/* 选择题样式 */
+.quiz-item {
+    margin-bottom: 40px; /* 每个问题之间增加间距 */
+}
+
+.quiz-item p {
+    font-size: 1.3em;
+    margin-bottom: 15px;
+    color: #555;
+    text-align: left;
+}
+
+/* 选项样式 */
+.options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 使用网格布局使选项两列对齐 */
+    gap: 20px; /* 增加选项之间的间距 */
+    justify-items: start; /* 左对齐选项 */
+}
+
+label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: #333;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.2s ease;
+}
+
+label:hover {
+    background-color: #f0f0f0; /* 悬停时背景变浅 */
+}
+
+label input[type="radio"] {
+    margin-right: 10px; /* 调整选项框与文字之间的间距 */
+}
+
+/* 提交按钮 */
+button {
+    display: block;
+    margin: 40px auto;
+    padding: 12px 40px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2em;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #45a049;
+    transform: translateY(-2px); /* 悬停时按钮略微上移 */
+}
+
+/* 响应式调整 */
+@media (max-width: 600px) {
+    .options {
+        grid-template-columns: 1fr; /* 小屏设备时将选项改为单列 */
+    }
+}
