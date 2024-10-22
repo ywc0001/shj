@@ -10,119 +10,16 @@
     <div class="container">
         <h1>选择更符合你个性的选项</h1>
         <form id="quizForm">
-            <!-- 问题 1 -->
-            <div class="quiz-item">
-                <p>1. 当你面对困难时，你的第一反应是：</p>
-                <div class="options">
-                    <label>
-                        <input type="radio" name="q1" value="A">
-                        勇敢面对，积极寻找解决办法。
-                    </label>
-                    <label>
-                        <input type="radio" name="q1" value="B">
-                        先观察情况，再谨慎行动。
-                    </label>
-                    <label>
-                        <input type="radio" name="q1" value="C">
-                        感到焦虑，但会努力克服。
-                    </label>
-                    <label>
-                        <input type="radio" name="q1" value="D">
-                        寻求他人帮助。
-                    </label>
-                </div>
+            <div class="quiz-item" id="quiz-item">
+                <!-- 题目内容将通过JavaScript动态填充 -->
             </div>
-            <!-- 问题 2 -->
-            <div class="quiz-item">
-                <p>2. 你在团队中通常扮演的角色是：</p>
-                <div class="options">
-                    <label>
-                        <input type="radio" name="q2" value="A">
-                        领导者，果断决策。
-                    </label>
-                    <label>
-                        <input type="radio" name="q2" value="B">
-                        创意者，提供新点子。
-                    </label>
-                    <label>
-                        <input type="radio" name="q2" value="C">
-                        协调者，促进团队和谐。
-                    </label>
-                    <label>
-                        <input type="radio" name="q2" value="D">
-                        实干者，认真执行任务。
-                    </label>
-                </div>
+            <div class="buttons">
+                <button type="button" id="prevBtn" onclick="showPrev()">上一题</button>
+                <button type="button" id="nextBtn" onclick="showNext()">下一题</button>
             </div>
-            <!-- 问题 3 -->
-            <div class="quiz-item">
-                <p>3. 你最喜欢的颜色是：</p>
-                <div class="options">
-                    <label>
-                        <input type="radio" name="q3" value="A">
-                        红色（代表热情、勇敢）
-                    </label>
-                    <label>
-                        <input type="radio" name="q3" value="B">
-                        蓝色（代表冷静、理智）
-                    </label>
-                    <label>
-                        <input type="radio" name="q3" value="C">
-                        绿色（代表生机、平和）
-                    </label>
-                    <label>
-                        <input type="radio" name="q3" value="D">
-                        黄色（代表活力、乐观）
-                    </label>
-                </div>
-            </div>           
-            <!-- 问题 4 -->
-            <div class="quiz-item">
-                <p>4. 以下哪种品质你最看重：</p>
-                <div class="options">
-                    <label>
-                        <input type="radio" name="q4" value="A">
-                        忠诚
-                    </label>
-                    <label>
-                        <input type="radio" name="q4" value="B">
-                        智慧
-                    </label>
-                    <label>
-                        <input type="radio" name="q4" value="C">
-                        善良
-                    </label>
-                    <label>
-                        <input type="radio" name="q4" value="D">
-                        勇敢
-                    </label>
-                </div>
-            </div>   
-            <!-- 问题 5 -->
-            <div class="quiz-item">
-                <p>5. 你对未知事物的态度是：</p>
-                <div class="options">
-                    <label>
-                        <input type="radio" name="q5" value="A">
-                        充满好奇，主动探索
-                    </label>
-                    <label>
-                        <input type="radio" name="q5" value="B">
-                        有些担心，但愿意尝试了解
-                    </label>
-                    <label>
-                        <input type="radio" name="q5" value="C">
-                        保持谨慎，观察他人行动后再决定
-                    </label>
-                    <label>
-                        <input type="radio" name="q5" value="D">
-                        不太感兴趣，除非必要
-                    </label>
-                </div>
-            </div>   
-            <button type="submit">提交</button>
+            <button type="submit" id="submitBtn" style="display:none;">提交</button>
         </form>
     </div>
-    <script src="/js/quiz.js"></script>
+    <script src="../js/quiz.js"></script>
 </body>
 </html>

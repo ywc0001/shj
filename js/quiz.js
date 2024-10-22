@@ -1,46 +1,98 @@
-document.getElementById('quizForm').onsubmit = function(e) {
-    e.preventDefault();
+const questions = [
+    {
+        question: "1. 当你面对困难时，你的第一反应是：",
+        options: [
+            "勇敢面对，积极寻找解决办法。",
+            "先观察情况，再谨慎行动。",
+            "感到焦虑，但会努力克服。",
+            "寻求他人帮助。",
+        ],
+    },
+    {
+        question: "2. 你在团队中通常扮演的角色是：",
+        options: [
+            "领导者，果断决策。",
+            "创意者，提供新点子。",
+            "协调者，促进团队和谐。",
+            "实干者，认真执行任务。",
+        ],
+    },
+    {
+        question: "3. 你最喜欢的颜色是：",
+        options: [
+            "红色（代表热情、勇敢）",
+            "蓝色（代表冷静、理智）",
+            "绿色（代表生机、平和）",
+            "黄色（代表活力、乐观）",
+        ],
+    },
+    {
+        question: "4. 以下哪种品质你最看重：",
+        options: [
+            "忠诚",
+            "智慧",
+            "善良",
+            "勇敢",
+        ],
+    },
+    {
+        question: "5. 你对未知事物的态度是：",
+        options: [
+            "充满好奇，主动探索",
+            "有些担心，但愿意尝试了解",
+            "保持谨慎，观察他人行动后再决定",
+            "不太感兴趣，除非必要",
+        ],
+    },
+];
 
-    // 收集用户选择的答案
-    const answers = {
-        q1: document.querySelector('input[name="q1"]:checked')?.value,
-        q2: document.querySelector('input[name="q2"]:checked')?.value,
-        q3: document.querySelector('input[name="q3"]:checked')?.value,
-        q4: document.querySelector('input[name="q4"]:checked')?.value,
-        q5: document.querySelector('input[name="q5"]:checked')?.value,
+let currentQuestionIndex = 0;
+const userAnswers = []; // 存储用户选项的数组
 
-    };
+// 显示当前题目
+function showQuestion(index) {
+    const quizItem = document.getElementById("quiz-item");
+    quizItem.innerHTML = `
+        <p>${questions[index].question}</p>
+        <div class="options">
+            ${questions[index].options.map((option, i) => `
+                <label>
+                    <input type="radio" name="q${index + 1}" value="${option}" onchange="saveAnswer(${index}, this.value)">
+                    <span>${option}</span>
+                </label>
+            `).join('')}
+        </div>
+    `;
+    updateButtons();
+}
 
-    if (!answers.q1 || !answers.q2 || !answers.q3 || !answers.q4 || !answers.q5) {
-        alert('请回答所有问题~');
-        return;
-    }
+// 保存用户的选项
+function saveAnswer(questionIndex, answer) {
+    userAnswers[questionIndex] = answer; // 将答案存储在数组中
+}
 
-    // 统计选择的答案，匹配守护兽
-    const creature = matchCreature(answers);
-    window.location.href = `result.html?creature=${creature}`;
-};
+// 更新按钮的可用性
+function updateButtons() {
+    document.getElementById("prevBtn").style.display = currentQuestionIndex === 0 ? 'none' : 'inline-block';
+    document.getElementById("nextBtn").style.display = currentQuestionIndex === questions.length - 1 ? 'none' : 'inline-block';
+    document.getElementById("submitBtn").style.display = currentQuestionIndex === questions.length - 1 ? 'inline-block' : 'none';
+}
 
-// 匹配守护兽的逻辑
-function matchCreature(answers) {
-    let aCount = 0, bCount = 0, cCount = 0, dCount = 0;
-
-    // 统计每个选项的选择次数
-    for (const answer in answers) {
-        if (answers[answer] === 'A') aCount++;
-        else if (answers[answer] === 'B') bCount++;
-        else if (answers[answer] === 'C') cCount++;
-        else if (answers[answer] === 'D') dCount++;
-    }
-
-    // 根据最多选择的选项匹配守护兽
-    if (aCount >= bCount && aCount >= cCount && aCount >= dCount) {
-        return '麒麟'; // A选项：麒麟
-    } else if (bCount >= aCount && bCount >= cCount && bCount >= dCount) {
-        return '白泽'; // B选项：白泽
-    } else if (cCount >= aCount && cCount >= bCount && cCount >= dCount) {
-        return '凤凰'; // C选项：凤凰
-    } else {
-        return '驳'; // D选项：驳
+// 显示下一题
+function showNext() {
+    if (currentQuestionIndex < questions.length - 1) {
+        currentQuestionIndex++;
+        showQuestion(currentQuestionIndex);
     }
 }
+
+// 显示上一题
+function showPrev() {
+    if (currentQuestionIndex > 0) {
+        currentQuestionIndex--;
+        showQuestion(currentQuestionIndex);
+    }
+}
+
+// 初始化显示第一个问题
+showQuestion(currentQuestionIndex);
