@@ -10,13 +10,17 @@ body, html {
     justify-content: center;
     align-items: center;
 }
+body {
+    background-image: url('../assets/icons/background01.webp');
+}
 
 /* 容器样式 */
 .intro, .container {
     width: 70%;
     max-width: 800px;
     padding: 100px;
-    background-color: #ffffff;
+    /* background-color: #ffffff; */
+    background-color: rgba(255, 255, 255, 0.8);
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     text-align: center;

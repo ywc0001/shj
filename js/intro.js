@@ -12,7 +12,7 @@ window.onload = function() {
             introPage.classList.add('fade-out'); // 添加CSS的渐隐类
             // 渐隐动画结束后（2秒）跳转到quiz.html
             setTimeout(() => {
-                window.location.href = 'views/quiz.html'; // 跳转到quiz.html
+                window.location.href = '../views/quiz.html'; // 跳转到quiz.html
             }, 2000); // 等待2秒，渐隐完成后跳转
         }, 2000); // 2秒后开始渐隐
 };
