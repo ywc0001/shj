@@ -52,17 +52,22 @@ const userAnswers = []; // 存储用户选项的数组
 // 显示当前题目
 function showQuestion(index) {
     const quizItem = document.getElementById("quiz-item");
+    const userAnswer = userAnswers[index];
+
     quizItem.innerHTML = `
         <p>${questions[index].question}</p>
         <div class="options">
             ${questions[index].options.map((option, i) => `
                 <label>
-                    <input type="radio" name="q${index + 1}" value="${option}" onchange="saveAnswer(${index}, this.value)">
+                    <input type="radio" name="q${index + 1}" value="${option}" 
+                        ${userAnswer === option ? "checked" : ""} 
+                        onchange="saveAnswer(${index}, this.value)">
                     <span>${option}</span>
                 </label>
             `).join('')}
         </div>
     `;
+
     updateButtons();
 }
 
@@ -104,3 +109,49 @@ function showPrev() {
 
 // 初始化显示第一个问题
 showQuestion(currentQuestionIndex);
+
+function matchResult() {
+    const choiceCounts = { A: 0, B: 0, C: 0, D: 0 };
+    const optionsMapping = ["A", "B", "C", "D"];
+
+    userAnswers.forEach((answer, index) => {
+        const optionIndex = questions[index].options.indexOf(answer);
+        if (optionIndex !== -1) {
+            choiceCounts[optionsMapping[optionIndex]]++;
+        }
+    });
+
+    const maxChoice = Object.keys(choiceCounts).reduce((a, b) =>
+        choiceCounts[a] > choiceCounts[b] ? a : b
+    );
+
+    switch (maxChoice) {
+        case "A":
+            return "麒麟";
+        case "B":
+            return "白泽";
+        case "C":
+            return "凤凰";
+        case "D":
+            return "驳";
+        default:
+            return null; // 如果没有结果
+    }
+}
+
+document.getElementById("quizForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    if (userAnswers.length < questions.length || userAnswers.includes(undefined)) {
+        alert("请完成所有题目后再提交！");
+        return;
+    }
+
+    const result = matchResult();
+    if (result) {
+        localStorage.setItem("matchedAnimal", result); // 保存匹配结果到 localStorage
+        window.location.href = "result.html"; // 跳转到结果页面
+    } else {
+        alert("无法匹配结果，请重试！");
+    }
+});

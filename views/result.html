@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>匹配结果</title>
+    <link rel="stylesheet" href="../css/result.css">
+</head>
+<body>
+    <div class="container">
+        <h1 id="title">你的守护神兽是：</h1>
+        <p id="matched-animal" class="highlight"></p>
+        <div id="description" class="hidden">
+            <!-- 动态加载文案 -->
+        </div>
+        <button id="startVideoBtn" class="hidden" onclick="playVideo()">观看守护兽视频</button>
+    </div>
+    <video id="guardian-video" class="hidden" controls>
+        <!-- 预设的视频资源 -->
+        <source src="" id="video-source" type="video/mp4">
+        您的浏览器不支持视频播放。
+    </video>
+    <script src="../js/result.js"></script>
+</body>
+</html>
