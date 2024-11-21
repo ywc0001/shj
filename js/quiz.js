@@ -69,13 +69,21 @@ function showQuestion(index) {
 // 保存用户的选项
 function saveAnswer(questionIndex, answer) {
     userAnswers[questionIndex] = answer; // 将答案存储在数组中
+    updateButtons(); // 更新按钮状态
 }
+
 
 // 更新按钮的可用性
 function updateButtons() {
+    const isAnswered = userAnswers[currentQuestionIndex] !== undefined; // 检查当前题目是否已回答
+    const nextBtn = document.getElementById("nextBtn");
+
     document.getElementById("prevBtn").style.display = currentQuestionIndex === 0 ? 'none' : 'inline-block';
-    document.getElementById("nextBtn").style.display = currentQuestionIndex === questions.length - 1 ? 'none' : 'inline-block';
+    nextBtn.style.display = currentQuestionIndex === questions.length - 1 ? 'none' : 'inline-block';
     document.getElementById("submitBtn").style.display = currentQuestionIndex === questions.length - 1 ? 'inline-block' : 'none';
+
+    // 禁用或启用“下一题”按钮
+    nextBtn.disabled = !isAnswered;
 }
 
 // 显示下一题

@@ -79,6 +79,14 @@ input[type="radio"]:checked + span {
     margin: 20px 0;
 }
 
+#prevBtn {
+    margin-right: auto; /* 靠左 */
+}
+
+#nextBtn {
+    margin-left: auto; /* 靠右 */
+}
+
 /* 提交按钮 */
 button {
     padding: 12px 20px;
@@ -90,6 +98,12 @@ button {
     font-size: 1.2em;
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
+
+button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
 
 button:hover {
     background-color: #45a049;
