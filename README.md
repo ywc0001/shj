@@ -1,39 +1,33 @@
-# shj
+# 《山海经》守护兽匹配系统
 
-#### 介绍
-{**以下是 Gitee 平台说明，您可以替换此简介**
-Gitee 是 OSCHINA 推出的基于 Git 的代码托管平台（同时支持 SVN）。专为开发者提供稳定、高效、安全的云端软件开发协作平台
-无论是个人、团队、或是企业，都能够用 Gitee 实现代码托管、项目管理、协作开发。企业项目请看 [https://gitee.com/enterprises](https://gitee.com/enterprises)}
+## 项目简介
 
-#### 软件架构
-软件架构说明
+《山海经》守护兽匹配系统是一个结合中国传统文化与现代AI技术的互动平台。用户通过选择个性特征，系统智能匹配出符合其精神气质的神话生物，作为个人守护兽。通过AI生成的创意视频和图像，展现每个守护兽的形象与独特能力，使用户不仅感受到神话文化的魅力，也能与传统文化产生深刻的情感共鸣。
+
+## 功能特点
+
+- **个性化与智能化匹配**：通过用户性格特征的描述，系统智能化匹配最符合用户个性的守护兽。
+- **文化传承与创新呈现**：将《山海经》中的神话生物与现代技术结合，以创意视频形式呈现。
+- **动态交互与即时反馈**：系统即时响应用户选择，展示不同选项和对应的神话生物特质。
+- **AI创意生成**：AI技术生成与守护兽相关的创意视频和图像，融合传统与现代元素。
+
+## 快速开始
+克隆仓库：
+```
+git clone https://gitee.com/ywc2023/shj.git
+```
+
+## 贡献指南
+
+欢迎对本项目进行贡献。请遵循以下步骤：
+1. Fork本项目。
+2. 创建新的分支：`git checkout -b feature/your-feature-name`。
+3. 提交你的改动：`git commit -am 'Add some feature'`。
+4. 推送到你的分支：`git push origin feature/your-feature-name`。
+5. 创建Pull Request。
+
+## 许可证
+
+本项目采用[MIT License](LICENSE)。
 
 
-#### 安装教程
-
-1.  xxxx
-2.  xxxx
-3.  xxxx
-
-#### 使用说明
-
-1.  xxxx
-2.  xxxx
-3.  xxxx
-
-#### 参与贡献
-
-1.  Fork 本仓库
-2.  新建 Feat_xxx 分支
-3.  提交代码
-4.  新建 Pull Request
-
-
-#### 特技
-
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2.  Gitee 官方博客 [blog.gitee.com](https://blog.gitee.com)
-3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解 Gitee 上的优秀开源项目
-4.  [GVP](https://gitee.com/gvp) 全称是 Gitee 最有价值开源项目，是综合评定出的优秀开源项目
-5.  Gitee 官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6.  Gitee 封面人物是一档用来展示 Gitee 会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)

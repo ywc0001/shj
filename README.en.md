@@ -1,36 +1,32 @@
-# shj
+# Spiritual Creatures of ShanHaiJing
 
-#### Description
-{**When you're done, you can delete the content in this README and update the file with details for others getting started with your repository**}
+## Project Introduction
 
-#### Software Architecture
-Software architecture description
+The "Classic of Mountains and Seas" Guardian Beast Matching System is an interactive platform that combines traditional Chinese culture with modern AI technology. Users select personality traits, and the system intelligently matches mythical creatures that align with their spiritual temperament, serving as personal guardian beasts. Through AI-generated creative videos and images, the system showcases the image and unique abilities of each guardian beast, allowing users not only to feel the charm of mythological culture but also to resonate deeply with traditional culture.
 
-#### Installation
+## Key Features
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+- **Personalization and Intelligent Matching**: The system intelligently matches the most personality-fitting guardian beast based on the user's character traits.
+- **Cultural Heritage and Innovative Presentation**: Mythical creatures from the "Classic of Mountains and Seas" are combined with modern technology and presented in the form of creative videos.
+- **Dynamic Interaction and Instant Feedback**: The system responds instantly to user selections, displaying different options and the corresponding traits of mythical creatures.
+- **AI Creative Generation**: AI technology generates creative videos and images related to guardian beasts, blending traditional and modern elements.
 
-#### Instructions
+## Quick Start
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+Clone the repository:
+```bash
+git clone https://gitee.com/ywc2023/shj.git
+```
 
-#### Contribution
+## Contribution Guidelines
 
-1.  Fork the repository
-2.  Create Feat_xxx branch
-3.  Commit your code
-4.  Create Pull Request
+We welcome contributions to this project. Please follow these steps:
+1. Fork the project.
+2. Create a new branch: `git checkout -b feature/your-feature-name`.
+3. Commit your changes: `git commit -am 'Add some feature'`.
+4. Push to your branch: `git push origin feature/your-feature-name`.
+5. Create a Pull Request.
 
+## License
 
-#### Gitee Feature
-
-1.  You can use Readme\_XXX.md to support different languages, such as Readme\_en.md, Readme\_zh.md
-2.  Gitee blog [blog.gitee.com](https://blog.gitee.com)
-3.  Explore open source project [https://gitee.com/explore](https://gitee.com/explore)
-4.  The most valuable open source project [GVP](https://gitee.com/gvp)
-5.  The manual of Gitee [https://gitee.com/help](https://gitee.com/help)
-6.  The most popular members  [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+This project is licensed under the [MIT License](LICENSE).
