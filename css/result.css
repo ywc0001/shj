@@ -87,3 +87,38 @@ video {
         transform: translateY(0);
     }
 }
+
+/* 媒体查询：适配手机屏幕 */
+@media (max-width: 768px) {
+    body, html {
+        background-size: cover;
+    }
+
+    .container {
+        width: 90%;
+        margin: 50px auto;
+        padding: 15px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    .highlight {
+        font-size: 2.5em;
+    }
+
+    #description {
+        font-size: 1em;
+    }
+
+    button {
+        font-size: 1em;
+        padding: 10px 15px;
+    }
+
+    video {
+        max-width: 100%;
+    }
+}

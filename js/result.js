@@ -59,6 +59,7 @@ if (matchedAnimal && guardianDescriptions[matchedAnimal]) {
             setTimeout(showNextText, 2000); // 每段文字延迟2秒出现
         } else {
             startVideoBtn.classList.remove("hidden"); // 显示观看视频按钮
+            retryBtn.classList.remove("hidden"); //显示再测一次按钮
         }
     }
 
