@@ -33,7 +33,7 @@ h1 {
     font-size: 3em;
     font-weight: bold;
     margin: 20px 0;
-    color: rgb(255, 242, 223)/* 金黄色，突出显示 */
+    color: rgb(255, 242, 223)
 }
 
 /* 动态文案样式 */
@@ -50,7 +50,7 @@ h1 {
 
 button {
     padding: 12px 20px;
-    background-color:rgb(6, 82, 121); /* 番茄红 */
+    background-color:rgb(6, 82, 121); 
     color: white;
     border: none;
     border-radius: 5px;
