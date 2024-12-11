@@ -224,6 +224,16 @@ input:focus::placeholder {
     opacity: 0;
 }
 
+input.error {
+    border-color: red;
+    animation: shake 0.3s;
+}
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25%, 75% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+}
+
 /* 按钮盒子 */
 .btn-box {
     display: flex;

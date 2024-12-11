@@ -90,3 +90,8 @@ function playVideo() {
     descriptionElement.classList.add("hidden");
     startVideoBtn.classList.add("hidden");
 }
+
+// 再测一次
+function retryTest() {
+    window.location.href = "quiz.html"; // 跳转回测试页面
+}
