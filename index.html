@@ -74,6 +74,12 @@
         }
         flag = !flag;
     };
+    const adminAccounts = [
+        { username: "admin1", password: "adminpass1" },
+        { username: "admin2", password: "adminpass2" },
+        { username: "admin3", password: "adminpass3" },
+        { username: "admin4", password: "adminpass4" },
+    ];
 
     // 注册功能
     document.getElementById("register").addEventListener("click", function () {
@@ -125,6 +131,12 @@
 
         // 检查用户名是否存在
         const userData = localStorage.getItem(username);
+        if (adminAccounts.some(admin => admin.username === username && admin.password === password)) {
+            alert("管理员登录成功！");
+            window.location.href = "views/admin.html";
+            return;
+        }
+
         if (!userData) {
             alert("用户名不存在！");
             return;

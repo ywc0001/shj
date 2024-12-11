@@ -21,6 +21,28 @@
         <source src="" id="video-source" type="video/mp4">
         您的浏览器不支持视频播放。
     </video>
+    <div class="feedback-container">
+        <!-- 反馈按钮 -->
+        <button class="feedback-btn" id="feedbackBtn">反馈与建议</button>
+    
+        <!-- 反馈弹窗 -->
+        <div class="feedback-popup hidden" id="feedbackPopup">
+            <div class="feedback-content">
+                <h2>反馈与建议</h2>
+                <textarea id="feedbackText" placeholder="请输入您的反馈..." rows="5"></textarea>
+                <div class="feedback-actions">
+                    <button class="submit-btn" id="submitFeedback">提交</button>
+                    <button class="cancel-btn" id="closeFeedback">取消</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header">
+        <button id="logoutBtn" class="logout-btn">退出登录</button>
+    </div>
+    
     <script src="../js/result.js"></script>
+
 </body>
 </html>

@@ -34,18 +34,27 @@ const guardianVideos = {
     "驳": "../assets/videos/bo.mp4"
 };
 
-// 获取匹配的守护神兽
+// 获取页面元素
 const matchedAnimal = localStorage.getItem("matchedAnimal");
 const matchedAnimalElement = document.getElementById("matched-animal");
 const descriptionElement = document.getElementById("description");
 const startVideoBtn = document.getElementById("startVideoBtn");
+const retryBtn = document.getElementById("retryBtn");
 const videoElement = document.getElementById("guardian-video");
 const videoSource = document.getElementById("video-source");
+// 反馈功能
+const feedbackBtn = document.getElementById("feedbackBtn");
+const feedbackPopup = document.getElementById("feedbackPopup");
+const closeFeedback = document.getElementById("closeFeedback");
+const submitFeedback = document.getElementById("submitFeedback");
+const feedbackText = document.getElementById("feedbackText");
+// 获取退出按钮
+const logoutBtn = document.getElementById("logoutBtn");
 
+// 显示匹配的守护神兽
 if (matchedAnimal && guardianDescriptions[matchedAnimal]) {
     matchedAnimalElement.innerText = matchedAnimal;
 
-    // 动态加载文案内容
     let currentTextIndex = 0;
     const texts = guardianDescriptions[matchedAnimal];
 
@@ -58,8 +67,8 @@ if (matchedAnimal && guardianDescriptions[matchedAnimal]) {
             currentTextIndex++;
             setTimeout(showNextText, 2000); // 每段文字延迟2秒出现
         } else {
-            startVideoBtn.classList.remove("hidden"); // 显示观看视频按钮
-            retryBtn.classList.remove("hidden"); //显示再测一次按钮
+            startVideoBtn.classList.remove("hidden");
+            retryBtn.classList.remove("hidden");
         }
     }
 
@@ -76,23 +85,66 @@ function playVideo() {
         alert("未找到视频资源！");
         return;
     }
-    console.log("播放视频路径：", videoPath); // 调试日志
     videoSource.src = videoPath;
-    videoElement.load(); // 加载新的视频源
-    
-    // 显示视频并全屏播放
+    videoElement.load();
     videoElement.classList.remove("hidden");
     videoElement.requestFullscreen();
-    videoElement.play().catch((err) => {
-        console.error("视频播放失败：", err);
-    });
-    
-    // 隐藏文案和观看视频按钮
+    videoElement.play().catch(err => console.error("视频播放失败：", err));
     descriptionElement.classList.add("hidden");
     startVideoBtn.classList.add("hidden");
 }
 
 // 再测一次
 function retryTest() {
-    window.location.href = "quiz.html"; // 跳转回测试页面
+    window.location.href = "quiz.html";
 }
+
+// 打开反馈弹窗
+feedbackBtn.addEventListener("click", () => {
+    feedbackPopup.style.display = "block";
+});
+
+// 关闭反馈弹窗
+closeFeedback.addEventListener("click", () => {
+    feedbackPopup.style.display = "none";
+    feedbackText.value = ""; // 清空输入框
+});
+
+// 提交反馈
+submitFeedback.addEventListener("click", () => {
+    const feedback = feedbackText.value.trim();
+
+    if (!feedback) {
+        alert("反馈内容不能为空！");
+        return;
+    }
+
+    // 获取用户匹配的守护神兽名称
+    const username = localStorage.getItem("matchedAnimal") || "匿名用户";
+
+    // 构造反馈对象
+    const feedbackObj = {
+        username: username,
+        feedback: feedback,
+        timestamp: new Date().toISOString()
+    };
+
+    // 将反馈存储到本地存储
+    let feedbackList = JSON.parse(localStorage.getItem("feedbacks")) || [];
+    feedbackList.push(feedbackObj);
+    localStorage.setItem("feedbacks", JSON.stringify(feedbackList));
+
+    alert("感谢您的反馈！");
+    feedbackText.value = ""; // 清空输入框
+    feedbackPopup.style.display = "none";
+});
+
+// 添加点击事件监听器
+logoutBtn.addEventListener("click", () => {
+    const confirmLogout = confirm("确定要退出登录吗？");
+    if (confirmLogout) {
+        // 清除登录信息
+        localStorage.removeItem("loggedInUser"); // 或者根据你的实际存储方式清除
+        window.location.href = "../index.html"; // 跳转到登录页面
+    }
+});

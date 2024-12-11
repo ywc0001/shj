@@ -122,3 +122,123 @@ video {
         max-width: 100%;
     }
 }
+
+/* 按钮样式 */
+.feedback-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 8px;
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.feedback-btn:hover {
+    background-color: #0056b3;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* 弹窗背景 */
+.feedback-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    width: 90%;
+    max-width: 400px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    display: none;
+    z-index: 1000;
+}
+
+/* 弹窗内容样式 */
+.feedback-content {
+    text-align: center;
+    padding: 0 20px;
+}
+
+.feedback-content h2 {
+    margin-bottom: 15px;
+    font-size: 20px;
+    color: #333;
+}
+
+.feedback-content textarea {
+    width: 100%;
+    /* padding: 10px; */
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    resize: none;
+}
+
+/* 按钮组样式 */
+.feedback-actions {
+    display: flex;
+    justify-content: space-between;
+}
+
+.submit-btn, .cancel-btn {
+    flex: 1;
+    margin: 0 5px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.submit-btn {
+    background-color: #28a745;
+    color: white;
+}
+
+.submit-btn:hover {
+    background-color: #218838;
+}
+
+.cancel-btn {
+    background-color: #0056b3;;
+    color: white;
+}
+
+.cancel-btn:hover {
+    background-color: #0056b3;;
+}
+
+/* 隐藏弹窗 */
+.hidden {
+    display: none;
+}
+
+/* 定位退出按钮 */
+.header {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.logout-btn {
+    padding: 10px 20px;
+    background-color: #0056b3;;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.logout-btn:hover {
+    background-color: #0056b3;;
+}

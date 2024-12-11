@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>管理员页面</title>
+    <link rel="stylesheet" href="../css/admin.css">
+</head>
+<body>
+    <div class="container">
+        <h1>反馈管理</h1>
+        <div class="table-wrapper">
+            <table>
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>用户名</th>
+            <th>反馈内容</th>
+            <th>提交时间</th>
+        </tr>
+    </thead>
+    <tbody id="feedbackTable">
+        <!-- 动态加载反馈 -->
+    </tbody>
+</table>
+
+            </table>
+        </div>
+    </div>
+    
+</body>
+<script>
+window.onload = function () {
+    // 从 LocalStorage 获取反馈列表
+    const feedbacks = JSON.parse(localStorage.getItem("feedbacks")) || [];
+    const tableBody = document.getElementById("feedbackTable");
+
+    // 遍历反馈数据并动态生成表格行
+    feedbacks.forEach((fb, index) => {
+        const row = document.createElement("tr");
+        row.innerHTML = `
+            <td>${index + 1}</td>
+            <td>${fb.username}</td>
+            <td>${fb.feedback}</td>
+            <td>${new Date(fb.timestamp).toLocaleString()}</td>
+        `;
+        tableBody.appendChild(row);
+    });
+};
+
+</script>
+</html>
+
